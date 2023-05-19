@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.OrderFragment">
+    tools:context=".fragment.BillDetailFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:paddingLeft="10dp">
 
             <TextView
-                android:id="@+id/tv_order_info_text1"
+                android:id="@+id/tv_title_page"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Thông tin đơn hàng"
@@ -26,172 +26,172 @@
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_text2"
+                android:id="@+id/tv_title_billid"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text1"
+                android:layout_below="@+id/tv_title_page"
                 android:text="Mã đơn hàng:"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_no"
+                android:id="@+id/tv_bill_detail_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text1"
-                android:layout_toRightOf="@+id/tv_order_info_text2"
+                android:layout_below="@+id/tv_title_page"
+                android:layout_toRightOf="@+id/tv_title_billid"
                 android:text="XYZ"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_text3"
+                android:id="@+id/tv_title_bill_detail_time"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text2"
+                android:layout_below="@+id/tv_title_billid"
                 android:text="Thời gian đặt:"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_date"
+                android:id="@+id/tv_bill_detail_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text2"
-                android:layout_toRightOf="@+id/tv_order_info_text3"
+                android:layout_below="@+id/tv_title_billid"
+                android:layout_toRightOf="@+id/tv_title_bill_detail_time"
                 android:text="17/05/2023"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_text4"
+                android:id="@+id/tv_title_name_customer"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text3"
+                android:layout_below="@+id/tv_title_bill_detail_time"
                 android:text="Khách hàng:"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_cust_name"
+                android:id="@+id/tv_bill_detail_name_customer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text3"
-                android:layout_toRightOf="@+id/tv_order_info_text4"
+                android:layout_below="@+id/tv_title_bill_detail_time"
+                android:layout_toRightOf="@+id/tv_title_name_customer"
                 android:text="Long"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_text5"
+                android:id="@+id/tv_title_bill_detail_address"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text4"
+                android:layout_below="@+id/tv_title_name_customer"
                 android:text="Địa chỉ đặt hàng:"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_cust_address"
+                android:id="@+id/tv_bill_detail_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text4"
-                android:layout_toRightOf="@+id/tv_order_info_text5"
+                android:layout_below="@+id/tv_title_name_customer"
+                android:layout_toRightOf="@+id/tv_title_bill_detail_address"
                 android:text="3 Trần Phú, Hà Đông, HN"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_text6"
+                android:id="@+id/tv_title_phone_number"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text5"
+                android:layout_below="@+id/tv_title_bill_detail_address"
                 android:text="Số điện thoại:"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_cust_phone"
+                android:id="@+id/tv_phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_cust_address"
-                android:layout_toRightOf="@+id/tv_order_info_text5"
+                android:layout_below="@+id/tv_bill_detail_address"
+                android:layout_toRightOf="@+id/tv_title_bill_detail_address"
                 android:text="0123456789"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_text8"
+                android:id="@+id/tv_title_bill_detail_total"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text6"
+                android:layout_below="@+id/tv_title_phone_number"
                 android:text="Tổng tiền:"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_total"
+                android:id="@+id/tv_bill_detail_total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_cust_phone"
-                android:layout_toRightOf="@+id/tv_order_info_text8"
+                android:layout_below="@+id/tv_phone_number"
+                android:layout_toRightOf="@+id/tv_title_bill_detail_total"
                 android:text="40,000 VNĐ"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_text9"
+                android:id="@+id/tv_title_note"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text8"
+                android:layout_below="@+id/tv_title_bill_detail_total"
                 android:text="Trạng thái:"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <TextView
-                android:id="@+id/tv_order_info_status"
+                android:id="@+id/tv_bill_detail_note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text8"
-                android:layout_toRightOf="@+id/tv_order_info_text9"
-                android:text="Đang giao"
+                android:layout_below="@+id/tv_title_bill_detail_total"
+                android:layout_toRightOf="@+id/tv_title_note"
+                android:text="Nhiều cơm"
                 android:textSize="16dp"
                 android:textColor="@color/black">
             </TextView>
 
             <View
-                android:id="@+id/divider2"
+                android:id="@+id/divide"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_order_info_text9"
+                android:layout_below="@+id/tv_title_note"
                 android:background="@color/yellow">
             </View>
 
@@ -199,14 +199,14 @@
                 android:id="@+id/tv_order_info_text10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/divider2"
+                android:layout_below="@+id/divide"
                 android:layout_marginTop="10dp"
                 android:text=""
                 android:textColor="@color/yellow"
                 android:textSize="15sp"></TextView>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcv_order_info"
+                android:id="@+id/rcv_bill_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -215,16 +215,14 @@
             </androidx.recyclerview.widget.RecyclerView>
 
             <Button
-                android:id="@+id/btn_order_info_back"
-                android:layout_width="wrap_content"
+                android:id="@+id/btn_bill_detail_back"
+                android:layout_width="50dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_below="@+id/rcv_order_info"
+                android:layout_below="@+id/rcv_bill_info"
                 android:layout_centerHorizontal="true"
-                android:text="Quay Lại"
-                android:textSize="15sp"
-                android:background="@drawable/botron_button"
-                android:backgroundTint="@null"
+                android:background="@drawable/ic_back"
                 app:backgroundTint="@null">
             </Button>
 

@@ -10,6 +10,11 @@
         android:icon="@drawable/ic_cart"
         />
 
+    <item android:id="@+id/mSelf"
+        android:title="Tôi"
+        android:icon="@drawable/ic_self"
+        />
+
     <item android:id="@+id/mAbout"
         android:title="Thông tin"
         android:icon="@drawable/ic_info"

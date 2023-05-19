@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textSize="20dp"
-            android:text="Vui lòng thêm món bạn nhé"
+            android:text="Giỏ hàng trống"
             android:textColor="@color/black"
             android:layout_centerHorizontal="true"/>
     </RelativeLayout>
@@ -38,7 +38,7 @@
             </androidx.recyclerview.widget.RecyclerView>
 
             <TextView
-                android:id="@+id/tv_total"
+                android:id="@+id/tv_title_bill_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -55,7 +55,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_below="@+id/recycler_view_cart"
                 android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@+id/tv_total"
+                android:layout_toRightOf="@+id/tv_title_bill_total"
                 android:text="30,000"
                 android:textSize="20sp"
                 android:textColor="@color/yellow"/>
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_total"
+                android:layout_below="@+id/tv_title_bill_total"
                 android:background="@color/gray"/>
 
             <TextView
@@ -107,7 +107,7 @@
                     android:layout_marginEnd="10dp"
                     android:padding="10dp"
                     android:textSize="20dp"
-                    android:hint="Họ và tên"
+                    android:hint="Họ và tên *"
                     android:textColor="@color/black"/>
             </LinearLayout>
 
@@ -140,7 +140,7 @@
                     android:textSize="20dp"
                     android:padding="10dp"
                     android:layout_below="@+id/llName"
-                    android:hint="Địa chỉ"
+                    android:hint="Địa chỉ *"
                     android:textColor="@color/black"/>
             </LinearLayout>
 
@@ -176,7 +176,7 @@
                     android:padding="10dp"
                     android:layout_below="@+id/et_address"
                     android:inputType="phone"
-                    android:hint="Số điện thoại"
+                    android:hint="Số điện thoại *"
                     android:textColor="@color/black"/>
             </LinearLayout>
 

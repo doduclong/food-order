@@ -26,9 +26,9 @@ public class ProductCartAdapter extends RecyclerView.Adapter<ProductCartAdapter.
     private MainActivity mainActivity;
     private CartFragment cartFragment;
 
-    public void setData(List<Product> listProductCart, MainActivity home, CartFragment cartFragment) {
+    public void setData(List<Product> listProductCart, MainActivity mainActivity, CartFragment cartFragment) {
         this.listProductCart = listProductCart;
-        this.mainActivity = home;
+        this.mainActivity = mainActivity;
         this.cartFragment = cartFragment;
         notifyDataSetChanged();
     }
@@ -51,33 +51,33 @@ public class ProductCartAdapter extends RecyclerView.Adapter<ProductCartAdapter.
             holder.tvPriceProductCart.setText(formatPrice.format(product.getPrice()) + " VND");
             int count = product.getNumProduct();
             if(count != 0){
-                holder.tvCountCart.setText(String.valueOf(count));
+                holder.tvQuantityProduct.setText(String.valueOf(count));
             }else {
-                holder.tvCountCart.setText(String.valueOf(1));
+                holder.tvQuantityProduct.setText(String.valueOf(1));
             }
-            holder.imgMinusCart.setOnClickListener(new View.OnClickListener() {
+            holder.imgDecreaseQuantity.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    countProduct = Integer.parseInt(holder.tvCountCart.getText().toString());
+                    countProduct = Integer.parseInt(holder.tvQuantityProduct.getText().toString());
                     if(countProduct > 1){
                         countProduct--;
                         mainActivity.setNumberOfProduct(position,countProduct);
                         cartFragment.setCountForProduct(position,countProduct);
-                        holder.tvCountCart.setText(String.valueOf(countProduct));
+                        holder.tvQuantityProduct.setText(String.valueOf(countProduct));
                         cartFragment.setTotalPrice(0,1,product.getPrice());
                         notifyDataSetChanged();
                     }
                 }
             });
-            holder.imgPlusCart.setOnClickListener(new View.OnClickListener() {
+            holder.imgIncreaseQuantity.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    countProduct = Integer.parseInt(holder.tvCountCart.getText().toString());
+                    countProduct = Integer.parseInt(holder.tvQuantityProduct.getText().toString());
                     if (countProduct < 10){
                         countProduct++;
                         mainActivity.setNumberOfProduct(position,countProduct);
                         cartFragment.setCountForProduct(position,countProduct);
-                        holder.tvCountCart.setText(String.valueOf(countProduct));
+                        holder.tvQuantityProduct.setText(String.valueOf(countProduct));
                         cartFragment.setTotalPrice(1,1,product.getPrice());
                         notifyDataSetChanged();
                     }
@@ -85,13 +85,11 @@ public class ProductCartAdapter extends RecyclerView.Adapter<ProductCartAdapter.
             });
 
 //            khi nguoi dung bam nut xoa
-            holder.imgRemoveCart.setOnClickListener(new View.OnClickListener() {
+            holder.imgRemoveProductCart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    countProduct = Integer.parseInt(holder.tvCountCart.getText().toString());
-
+                    countProduct = Integer.parseInt(holder.tvQuantityProduct.getText().toString());
                     cartFragment.setTotalPrice(0,countProduct,product.getPrice());
-
                     listProductCart.remove(position);
                     if (listProductCart.size() == 0){
                         cartFragment.displayEmptyCart();
@@ -113,19 +111,18 @@ public class ProductCartAdapter extends RecyclerView.Adapter<ProductCartAdapter.
     public class ProductCartViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imgPhotoCart;
-        TextView tvNameProductCart, tvPriceProductCart,tvCountCart ;
-        ImageView imgMinusCart,imgPlusCart,imgRemoveCart;
+        TextView tvNameProductCart, tvPriceProductCart, tvQuantityProduct;
+        ImageView imgDecreaseQuantity, imgIncreaseQuantity, imgRemoveProductCart;
 
         public ProductCartViewHolder(@NonNull View itemView) {
             super(itemView);
-
             imgPhotoCart = itemView.findViewById(R.id.img_photo_cart);
             tvNameProductCart = itemView.findViewById(R.id.tv_name_product_cart);
             tvPriceProductCart = itemView.findViewById(R.id.tv_price_product_cart);
-            imgMinusCart = itemView.findViewById(R.id.img_minus_cart);
-            tvCountCart = itemView.findViewById(R.id.tv_count_cart);
-            imgPlusCart = itemView.findViewById(R.id.img_plus_cart);
-            imgRemoveCart = itemView.findViewById(R.id.img_remove_cart);
+            imgDecreaseQuantity = itemView.findViewById(R.id.image_decrease_quantity_product_cart);
+            tvQuantityProduct = itemView.findViewById(R.id.tv_quantity_product_cart);
+            imgIncreaseQuantity = itemView.findViewById(R.id.image_increase_quantity_product_cart);
+            imgRemoveProductCart = itemView.findViewById(R.id.img_remove_product_cart);
         }
     }
 }

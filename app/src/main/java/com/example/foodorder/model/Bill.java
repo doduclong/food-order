@@ -9,8 +9,6 @@ public class Bill {
     private String address;
     private String phoneNumber;
     private String time;
-    private String status;
-    private int quantity;
     private int total;
     private List<BillDetail> listBillDetail;
 
@@ -25,13 +23,11 @@ public class Bill {
         this.billId = billId;
     }
 
-    public Bill(String address, String name, String phoneNumber, String time, String status, int quantity, int total, List<BillDetail> listBillDetail) {
+    public Bill(String address, String name, String phoneNumber, String time,  int total, List<BillDetail> listBillDetail) {
         this.address = address;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.time = time;
-        this.status = status;
-        this.quantity = quantity;
         this.total = total;
         this.listBillDetail = listBillDetail;
     }
@@ -66,22 +62,6 @@ public class Bill {
 
     public void setTime(String time) {
         this.time = time;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public int getTotal() {

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="10dp"
+    android:layout_marginRight="10dp">
+
+    <RelativeLayout
+        android:id="@+id/rl_history"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_bill_product"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/bunbo"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_bill_name_customer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img_bill_product"
+            android:text="Bún bò"
+            android:textColor="@color/black"
+            android:textSize="10dp"></TextView>
+
+        <TextView
+            android:id="@+id/tv_x"
+            android:layout_width="7dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/tv_bill_name_customer"
+            android:text="x"
+            android:textSize="10dp"
+            android:textColor="@color/black">
+        </TextView>
+        <TextView
+            android:id="@+id/tv_bill_product_quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/tv_x"
+            android:text="3"
+            android:textSize="10dp"
+            android:textColor="@color/black">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_title_bill_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img_bill_product"
+            android:layout_below="@+id/tv_bill_name_customer"
+            android:text="Thành tiền: "
+            android:textSize="10dp"
+            android:textColor="@color/black">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_bill_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_bill_name_customer"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/tv_title_bill_total"
+            android:text="80,000 VNĐ"
+            android:textColor="@color/black"
+            android:textSize="10dp"></TextView>
+
+        <TextView
+            android:id="@+id/tv_title_bill_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img_bill_product"
+            android:layout_below="@+id/tv_bill_total"
+            android:text="Thời gian đặt hàng: "
+            android:textSize="10dp"
+            android:textColor="@color/black">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_bill_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/tv_title_bill_time"
+            android:layout_below="@+id/tv_bill_total"
+            android:text="17/05/2023"
+            android:textSize="10dp"
+            android:textColor="@color/black">
+        </TextView>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

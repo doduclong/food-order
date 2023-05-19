@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.ProductFragment"
     android:orientation="vertical"
     android:background="@color/white">
@@ -16,17 +17,104 @@
             <ImageView
                 android:id="@+id/titleImage"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@drawable/baemin"/>
+                android:layout_height="200dp"
+                android:src="@drawable/truongsa" />
 
+            <LinearLayout
+                android:id="@+id/llIntro"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titleImage"
+                android:layout_marginTop="-30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bún cá Trường Sa"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:layout_marginLeft="65dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ic_gh"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_giaohang"/>
+                    <TextView
+                        android:id="@+id/tv_receiver"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Miễn phí giao hàng dưới 2km"
+                        android:layout_marginTop="5dp"
+                        android:textSize="16dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_deal"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Mở cửa đến 23h"
+                        android:layout_marginTop="5dp"
+                        android:textSize="16dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_deal"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Miễn phí 1 pepsi cho đơn từ 150k"
+                        android:layout_marginTop="5dp"
+                        android:textSize="16dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_title_foryou"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llIntro"
+                android:text="Dành cho bạn"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcv_product"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/titleImage"
+                android:layout_below="@+id/tv_title_foryou"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"></androidx.recyclerview.widget.RecyclerView>
+                android:layout_marginTop="10dp"></androidx.recyclerview.widget.RecyclerView>
         </RelativeLayout>
     </ScrollView>
 </FrameLayout>

@@ -79,7 +79,12 @@ public class CartFragment extends Fragment {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-                addProductToOrder();
+                if(etName.getText().toString().isEmpty() || etAddress.getText().toString().isEmpty() || etPhoneNumber.getText().toString().isEmpty()) {
+                    Toast.makeText(getContext(), "Vui long điền đủ thông tin nhận hàng", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    addProductToOrder();
+                }
             }
         });
         mainActivity = (MainActivity) getActivity();
@@ -162,8 +167,6 @@ public class CartFragment extends Fragment {
         rlCart.setVisibility(View.GONE);
     }
 
-
-    // lấy giá trị tổng tiền tất cả sản phẩm trong giỏ hàng
     private int getTotalProduct(){
         for (Product product : listCartProduct){
             int priceProduct = product.getPrice() ;
@@ -181,8 +184,7 @@ public class CartFragment extends Fragment {
             billDetail.setName(product.getName());
             billDetail.setPrice(product.getPrice());
             billDetail.setImg(product.getImg());
-            billDetail.setNumProduct(product.getNumProduct());
-            billDetail.setStatus("Chờ xác nhận");
+            billDetail.setQuantity(product.getNumProduct());
             listBillDetail.add(billDetail);
         }
         return listBillDetail;

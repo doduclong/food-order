@@ -12,18 +12,17 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/img_photo_product"
+            android:id="@+id/img_product"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
-            android:layout_alignParentTop="true">
-        </ImageView>
+            android:layout_marginTop="5dp"></ImageView>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/img_photo_product">
+            android:layout_below="@+id/img_product">
 
             <TextView
                 android:id="@+id/tv_product_name"
@@ -31,8 +30,8 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
-                android:text="Iphone 12"
-                android:textSize="10sp"
+                android:text="bún bò"
+                android:textSize="10dp"
                 android:textColor="@color/black">
             </TextView>
 
@@ -42,8 +41,8 @@
                 android:layout_height="15dp"
                 android:gravity="center"
                 android:layout_below="@+id/tv_product_name"
-                android:text="24.990.000"
-                android:textSize="10sp"
+                android:text="35,000"
+                android:textSize="10dp"
                 android:textColor="@color/black">
             </TextView>
 

@@ -8,16 +8,16 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.foodorder.fragment.AboutFragment;
+import com.example.foodorder.fragment.BillFragment;
 import com.example.foodorder.fragment.CartFragment;
 import com.example.foodorder.fragment.AddProductFragment;
-import com.example.foodorder.fragment.OrderFragment;
+import com.example.foodorder.fragment.BillDetailFragment;
 import com.example.foodorder.fragment.ProductFragment;
+import com.example.foodorder.fragment.SelfFragment;
 import com.example.foodorder.model.Bill;
 import com.example.foodorder.model.Product;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         listCartProduct = new ArrayList<>();
         //listProduct = new ArrayList<>();
         initItem();
-        setDataBotNavHome();
+        setDataBottomNavigation();
 //        FirebaseDatabase database = FirebaseDatabase.getInstance();
 //        DatabaseReference myRef = database.getReference("DbProduct");
 //        Product product = new Product("1", "https://firebasestorage.googleapis.com/v0/b/food-order-55191.appspot.com/o/bunbo.png?alt=media&token=6058086e-ac1b-4b63-bea9-416aaa0140b9", "Bún bò",
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 //        myRef.setValue(listProduct);
     }
 
-    private void setDataBotNavHome() {
+    private void setDataBottomNavigation() {
         bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -83,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.mCart:
                         fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.frame_layout, new CartFragment(listCartProduct));
+                        fragmentTransaction.commit();
+                        break;
+
+                    case R.id.mSelf:
+                        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.frame_layout, new SelfFragment());
                         fragmentTransaction.commit();
                         break;
                     case R.id.mAbout:
@@ -109,10 +115,23 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    public void gotoBillDetailFragment(){
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, new BillDetailFragment());
+        fragmentTransaction.commit();
+    }
+
     public void gotoProductFragment(){
         bottomNavigation = findViewById(R.id.bottom_navigation);
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, new ProductFragment());
+        fragmentTransaction.commit();
+    }
+
+    public void gotoBillFragment(){
+        bottomNavigation = findViewById(R.id.bottom_navigation);
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, new BillFragment());
         fragmentTransaction.commit();
     }
     public void addProductToCart(Product product){
@@ -124,10 +143,10 @@ public class MainActivity extends AppCompatActivity {
     public List<Product> getProductInCart() {
         return listCartProduct;
     }
-    public void toBillDetailFragment(Bill billInfo){
+    public void gotoBillDetailFragment(Bill billInfo){
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout, new OrderFragment(billInfo));
-        fragmentTransaction.addToBackStack(OrderFragment.TAG);
+        fragmentTransaction.replace(R.id.frame_layout, new BillDetailFragment(billInfo));
+        fragmentTransaction.addToBackStack(BillDetailFragment.TAG);
         fragmentTransaction.commit();
     }
 }

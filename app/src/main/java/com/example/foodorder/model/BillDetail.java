@@ -3,19 +3,17 @@ package com.example.foodorder.model;
 public class BillDetail {
     private String billId;
     private String name;
-    private String img;
-    private String status;
     private int price;
-    private int numProduct;
+    private String img;
+    private int quantity;
 
     public BillDetail(){
     }
 
-    public BillDetail(String name, String img, String status, int price) {
+    public BillDetail(String name,  int price, String img) {
         this.name = name;
-        this.img = img;
-        this.status = status;
         this.price = price;
+        this.img = img;
     }
 
     public String getBillId() {
@@ -34,22 +32,6 @@ public class BillDetail {
         this.name = name;
     }
 
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public int getPrice() {
         return price;
     }
@@ -58,11 +40,19 @@ public class BillDetail {
         this.price = price;
     }
 
-    public int getNumProduct() {
-        return numProduct;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setNumProduct(int numProduct) {
-        this.numProduct = numProduct;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }
